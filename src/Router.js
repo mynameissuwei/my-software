@@ -2,11 +2,11 @@ import React from 'react'
 import { BrowserRouter as Router,Route,Switch,Redirect } from 'react-router-dom'
 import App from './App'
 import Total from './Total'
-import A from './pages/A'
-import B from './pages/B'
-import C from './pages/C'
-import D from './pages/D'
-import E from './pages/E'
+import A from './pages/A/index'
+import B from './pages/B/index'
+import C from './pages/C/index'
+import D from './pages/D/index'
+import E from './pages/E/index'
 
 
 class IRouter extends React.Component {
@@ -14,21 +14,17 @@ class IRouter extends React.Component {
     console.log(1)
     return (
       <Router>
-          <Total>
-            <Route path='/home' render={()=> 
+            <Route path='/'  render={()=> 
                 <App>
-                <Switch>
-                    <Route path="/home/a" component={A} />
-                    <Route path="/home/b" component={B} />
-                    <Route path="/home/c" component={C}></Route>
-                    <Route path="/home/d" component={D}></Route>
-                    <Route path="/home/e" component={E}></Route>
-                    <Redirect to="/home/a" />
-                </Switch>
+                  <Switch>
+                      <Route path="/a" component={A} />
+                      <Route path="/b" component={B} />
+                      <Route path="/c" component={C}></Route>
+                      <Route path="/e" component={D}></Route>
+                      <Route path="/d" component={E}></Route>
+                  </Switch>
                 </App>
-            }/>
-          </Total>
-
+            } />
       </Router>
     ) 
   }

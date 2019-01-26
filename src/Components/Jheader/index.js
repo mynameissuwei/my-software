@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router , Link } from 'react-router-dom'
+import { BrowserRouter as Router , Link,NavLink } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
 
 import './index.less'
@@ -9,7 +9,6 @@ const { Header } = Layout;
 class Jheader extends Component {
 	render() {
 		return (
-			<Router>
 				<Layout className="layout">
 					<Header>
 						<div className="logo" />
@@ -19,25 +18,23 @@ class Jheader extends Component {
 							style={{ lineHeight: '64px' }}
 						>
 							<Menu.Item key="1">
-								<Link to='/home/a'>nav 1</Link>
+								<NavLink to='/a'>nav 1</NavLink>
 							</Menu.Item>
 							<Menu.Item key="2">
-								<Link to='/home/b'>nav 2</Link>
+								<NavLink to='/b'>nav 2</NavLink>
 							</Menu.Item>
 							<Menu.Item key="3">
-								<Link to='/home/c'>nav 3</Link>
+								<NavLink to='/c'>nav 3</NavLink>
 							</Menu.Item>
 							<Menu.Item key="4">
-								<Link to='/home/d'>nav 4</Link>
+								<NavLink to='/d'>nav 4</NavLink>
 							</Menu.Item>
 							<Menu.Item key="5">
-								<Link to='/home/e'>nav 5</Link>
+								<NavLink to='/e'>nav 5</NavLink>
 							</Menu.Item>
 						</Menu>
 					</Header>
 				</Layout>
-			</Router>
-
 		);
 	}
 }
