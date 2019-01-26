@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card,Table,Tag  } from 'antd'
-import axios from 'axios'
+import Axios from '../../axios'
+
 
 const tabList = [{
   key: 'tab1',
@@ -31,7 +32,7 @@ const tab1Columns = [{
 	key: 'abstract',
 	render: abstract => (
     <span>
-      {abstract.map(item => <Tag color="blue" key={abstract}>{item}</Tag>)}
+      {abstract.map((item,i) => <Tag color="blue" key={i}>{item}</Tag>)}
     </span>
   ),
 }, {
@@ -73,12 +74,13 @@ class E extends React.Component {
 	}
 	
 	componentDidMount() {
-		axios.get('https://www.easy-mock.com/mock/5c4c02ec50f5ab309c7dec17/DataSource/delivery').then((res) => {
-			console.log(res.data.result)
-			this.setState({
-				DataSource:res.data.result
-			})
-		})
+    Axios.ajax({
+      url:'/delivery'
+    }).then((value) => {
+      this.setState({
+        DataSource:value
+      })
+    })
 	}
 
   render() {
