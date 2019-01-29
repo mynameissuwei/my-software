@@ -18,19 +18,19 @@ class Jheader extends Component {
 							style={{ lineHeight: '64px' }}
 						>
 							<Menu.Item key="1">
-								<NavLink to='/a'>nav 1</NavLink>
+								<NavLink to='/home'>主页</NavLink>
 							</Menu.Item>
 							<Menu.Item key="2">
-								<NavLink to='/b'>nav 2</NavLink>
+								<NavLink to='/menubar'>菜单中心</NavLink>
 							</Menu.Item>
 							<Menu.Item key="3">
-								<NavLink to='/c'>nav 3</NavLink>
+								<NavLink to='/supermarket'>辅料超市</NavLink>
 							</Menu.Item>
 							<Menu.Item key="4">
-								<NavLink to='/d'>nav 4</NavLink>
+								<NavLink to='/order'>采购订单</NavLink>
 							</Menu.Item>
 							<Menu.Item key="5">
-								<NavLink to='/e'>nav 5</NavLink>
+								<NavLink to='/delivery'>配送验收</NavLink>
 							</Menu.Item>
 						</Menu>
 					</Header>

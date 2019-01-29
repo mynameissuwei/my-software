@@ -1,7 +1,9 @@
 import React from 'react'
 import { Card,Table,Tag  } from 'antd'
 import Axios from '../../axios'
+import SubHeader from '../../Components/SubHeader'
 
+import './index.less'
 
 const tabList = [{
   key: 'tab1',
@@ -43,22 +45,7 @@ const tab1Columns = [{
 
 
 
-const tabListNoTitle = [{
-  key: 'article',
-  tab: 'article',
-}, {
-  key: 'app',
-  tab: 'app',
-}, {
-  key: 'project',
-  tab: 'project',
-}];
 
-const contentListNoTitle = {
-  article: <p>article content</p>,
-  app: <p>app content</p>,
-  project: <p>project content</p>,
-};
 
 class E extends React.Component {
   state = {
@@ -68,9 +55,7 @@ class E extends React.Component {
   }
 
   onTabChange = (key, type) => {
-    console.log(key, type);
 		this.setState({ [type]: key });
-		console.log(this.state)
 	}
 	
 	componentDidMount() {
@@ -84,7 +69,6 @@ class E extends React.Component {
 	}
 
   render() {
-		console.log(this.DataSource)
 		const contentList = {
 			tab1: <Table columns={tab1Columns} dataSource={this.state.DataSource} />,
 			tab2: <Table columns={tab1Columns} dataSource={this.state.DataSource} />,
@@ -94,11 +78,17 @@ class E extends React.Component {
       <div>
         <Card
           style={{ width: '100%' }}
+          title={<SubHeader title='菜单中心' subTitle='统一菜单' />}
           tabList={tabList}
           activeTabKey={this.state.key}
           onTabChange={(key) => { this.onTabChange(key, 'key'); }}
         >
-          {contentList[this.state.key]}
+          <div style={{ background: '#ECECEC' }}>
+            <div style={{ background: 'white'}}>
+              {contentList[this.state.key]}
+            </div>
+            
+          </div>
         </Card>
       </div>
     );
