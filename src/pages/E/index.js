@@ -87,7 +87,6 @@ class E extends React.Component {
             <div style={{ background: 'white'}}>
               {contentList[this.state.key]}
             </div>
-            
           </div>
         </Card>
       </div>

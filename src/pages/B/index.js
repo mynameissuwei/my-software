@@ -5,6 +5,7 @@ import Axios from '../../axios'
 import SubHeader from '../../Components/SubHeader'
 import WrappedInlineForm from '../../Components/InlineForm'
 import TableOne from '../../Components/TableOne'
+import TableTwo from '../../Components/TableTwo'
 
 import './index.less'
 
@@ -120,7 +121,7 @@ class B extends React.Component {
   render() {
 		const contentList = {
 			tab1: <TableOne columns={tab1Columns} dataSource={this.state.tab1Source}  />,
-			tab2: <Table columns={tab2Columns} dataSource={this.state.tab2Source} />,
+			tab2: <TableTwo columns={tab2Columns} dataSource={this.state.tab2Source} />,
 			tab3: <Table columns={tab1Columns} dataSource={this.state.DataSource} />
 		};
     return (
