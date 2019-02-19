@@ -1,28 +1,28 @@
 import React from 'react'
-import OrderTable from '../../Components/OrderTable'
 import SubHeader from '../../Components/SubHeader'
 import { Card,Row,Col } from 'antd'
+import ParameterTable from '../../Components/ParameterTable'
+
 
 import './index.less'
 
-class D extends React.Component {
-	render() {
-		return(
-			<div className='PurchaseOrder'>
-				<Card
+class Parameter extends React.Component {
+  render() {
+    return(
+      <div className='Parameter'>
+        <Card
 				style={{ width: '100%' }}
 				title={<SubHeader title='采购订单' subTitle='' />}
-				onTabChange={(key) => { this.onTabChange(key, 'key'); }}
 				>
 					<Row>
 						<Col xl={{span: 15, offset: 4}}>
-							<OrderTable />
+              <ParameterTable />
 						</Col>
 					</Row>
 				</Card>
-			</div>
-		)
-	}
+      </div>
+    )
+  }
 }
 
-export default D
+export default Parameter
